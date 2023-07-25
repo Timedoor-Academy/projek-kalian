@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ judul }} - Vue JS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Logo and Title -->
+    <header>
+        <img :src="img" alt="Logo">
+        <h1 v-html="head"></h1>
+        <marquee behavior="scroll" direction="left" v-html="desk"></marquee>
+    </header>
+
+    <div class="container">
+        <!-- Card 4 -->
+        <div class="card">
+            <h1>Mengetahui Bilangan Ganjil/Genap</h1>
+            <p v-text="infoNum()"></p>
+            <div class="button-container">
+                <button class="green" @click="plusBtn">Tambah</button>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <h1>Menghitung Luas Persegi Panjang</h1>
+            <br>
+            <input type="number" v-model="width" placeholder="Masukkan lebar">
+            <input type="number" v-model="height" placeholder="Masukkan tinggi">
+            <p>Luas Persegi Panjang: {{ luasPersegiPanjang }}</p>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    const judul = new Vue({
+        el: 'title',
+        data: {
+            judul: "Latihan 1"
+        }
+    });
+    const header = new Vue({
+        el: 'header',
+        data: {
+            head: "<i>Contoh Penggunaan VUE JS</i>",
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png',
+            desk: "Ini adalah contoh pengggunaan VUE JS sederhana, <b>ingat coding itu adalah seni.</b>"
+        }
+    })
+    const vm = new Vue({
+        el: '.container',
+        data: {
+            num: 0,
+            width: 0,
+            height: 0
+        },
+        methods: {
+            infoNum() {
+                if (this.num % 2 === 0) {
+                    return this.num + " Bilangan Genap";
+                } else {
+                    return this.num + " Bilangan Ganjil";
+                }
+            },
+            plusBtn() {
+                this.num++;
+            }
+        },
+        computed: {
+            luasPersegiPanjang() {
+                return this.width * this.height;
+            }
+        }
+    });
+</script>
+
+</html>
