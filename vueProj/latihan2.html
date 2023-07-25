@@ -1,0 +1,135 @@
+<!-- 
+
+LATIHAN 2 METHOD, PARAMETER, COMPUTED DI VUE JS
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ judul }} - Vue JS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Logo and Title -->
+    <header>
+        <img :src="img" alt="Logo">
+        <h1 v-html="head"></h1>
+        <marquee behavior="scroll" direction="left" v-html="desk"></marquee>
+    </header>
+
+    <!-- Membuat class atau id untuk di panggil ke dalam properti el -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h1>Memanggil nilai variable ke dalam konten</h1>
+            <!-- Memanggil data yang ada di variable dengan tanda {{ namaObject}} -->
+            <p>
+                Nilai di variable pertama adalah <i>{{ name }}</i>
+                <br>
+                Nilai di variable kedua adalah <i>{{ message }}</i>
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h1>Membuat fungsi computed dan method</h1>
+            <p>
+                <!-- Memanggil method dengan tanda namaMethod di ikuti () -->
+                {{ getName() }}
+                <br>
+                <!-- Memanggil computed dengan perintah {{ namaComputed }} -->
+                {{ infoAge }} Years Old
+                <br>
+                Nama Lengkap {{ fullName }}
+                <br>
+                <!-- Memanggil fungsi untuk mengetahui muda atau tidak dengan logika kurang dari 22 adalah muda -->
+                Usia {{infoAge}} itu masih {{ infoLook }}
+            </p>
+            <!-- JavaScript Expression 'Muda = true' & 'Tua = adalah false'-->
+            <!-- <p>{{ infoUsia ? 'Muda':'Tua' }}</p> -->
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+    const judul = new Vue({
+        el: 'title',
+        data: {
+            judul: "Latihan 2"
+        }
+    });
+    const header = new Vue({
+        el: 'header',
+        data: {
+            head: "<i>Contoh Penggunaan VUE JS</i>",
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png',
+            desk: "Ini adalah contoh pengggunaan VUE JS sederhana, <b>ingat coding itu adalah seni.</b>"
+        }
+    })
+
+    // Membuat variable dengan nama nilai dan tipe datanya object
+    const nilai = {
+        name: 'Putra',
+        birthday: 2003,
+        message: "Hello World!",
+        // Nilai javascript expression
+        infoUsia: true,
+        firstName: 'Jayyid ',
+        lastName: 'Saputra'
+    }
+
+    // KODE INSTANCE VUE
+    const vm = new Vue({
+        // Properti el untuk memanggil element html, .app untuk class & #app untuk id
+        el: '.container',
+        // Properti data untuk mengambil data sebuah varaible string dan tipe data yang lain
+        // data: {
+        //     name: 'Putra',
+        //     message: "Hello World!"
+        // }
+        data: nilai,
+        // Properti method untuk menambahkan sebuah fungsi seperti di js biasa dengan cache yang bisa deteksi sesuai berapa kali di panggil
+        methods: {
+            // Bisa di ikutin dengan tag funtion atau biasa saja
+            // getname()
+            getName: function () {
+                // perintah this.namaObject untuk memanggil data pada variable yang tersimpan di Vue
+                return "Say, " + this.name; // perintah untuk memanggil nama di variable nilai
+            },
+            // Menambahkan parameter dengan perintah namaObject(parameter)
+            editName(newName) {
+                this.name =
+                    newName; // Perintah untuk mengubah nilai variable name dengan nilai baru yang sesuai di parameter newName
+                return this.getName; // Untuk mengembalikan hasil dari nilai baru di parameter newName
+            }
+        },
+        // Properti computed untuk menambahkan sebuah fungsi seperti di js biasa dengan cache yang hanya terdeteksi satu kali walaupun perintah nya di panggil beberapa kali
+        computed: {
+            // Membuat fungsi untuk menghitung usia
+            infoAge: function () {
+                return 2023 - this.birthday;
+            },
+            // Membuat fungsi untuk memanggil nama lengkap
+            fullName() {
+                return this.firstName + this.lastName;
+            },
+            // Membuat fungsu untuk mengetahui muda atau tidak
+            infoLook: function () {
+                if (this.infoAge <= "22") {
+                    return "muda"
+                } else {
+                    return "tua"
+                }
+            }
+        }
+    })
+</script>
+
+</html>

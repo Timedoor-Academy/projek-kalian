@@ -1,0 +1,78 @@
+<!-- 
+
+LATIHAN 1 PENGENALAN VUE JS DAN INSTALASI VUE JS
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ judul }} - Vue JS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Logo and Title -->
+    <header>
+        <img :src="img" alt="Logo">
+        <h1 v-html="head"></h1>
+        <marquee behavior="scroll" direction="left" v-html="desk"></marquee>
+    </header>
+
+    <!-- Membuat class atau id untuk di panggil ke dalam properti el -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h1>Memanggil nilai variable ke dalam konten</h1>
+            <!-- Memanggil data yang ada di variable dengan tanda {{ namaObject}} -->
+            <p>
+                Nilai di variable pertama adalah <i>{{ name }}</i>
+                <br>
+                Nilai di variable kedua adalah <i>{{ message }}</i>
+            </p>
+        </div>
+    </div>
+</body>
+<script>
+    const judul = new Vue({
+        el: 'title',
+        data: {
+            judul: "Latihan 1"
+        }
+    });
+    const header = new Vue({
+        el: 'header',
+        data: {
+            head: "<i>Contoh Penggunaan VUE JS</i>",
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vue.png/220px-Vue.png',
+            desk: "Ini adalah contoh pengggunaan VUE JS sederhana, <b>ingat coding itu adalah seni.</b>"
+        }
+    })
+
+    // Membuat tipe data object
+    const nilai = {
+        name: 'Putra',
+        message: "Hello World!",
+        // Nilai javascript expression
+        infoUsia: true
+    }
+
+    // KODE INSTANCE VUE
+    const vm = new Vue({
+        // Properti el untuk memanggil element html, .container untuk class & #app untuk id
+        el: '.container',
+        // Properti data untuk mengambil data sebuah varaible string dan tipe data yang lain
+        // data: {
+        //     name: 'Putra',
+        //     message: "Hello World!"
+        // }
+        data: nilai
+    })
+</script>
+
+</html>
