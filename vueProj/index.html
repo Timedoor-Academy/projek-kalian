@@ -109,6 +109,16 @@ HASIL LATIHAN TERBARU
 
         <!-- Card 5 -->
         <div class="card">
+            <h1>Mengubah data secara realtime</h1>
+            <br>
+            <!-- Memanggil dataObject dengan derective v-model="namaData" -->
+            <input type="text" v-model="name" placeholder="Masukkan Nama">
+            <input type="text" v-model="message" placeholder="Masukkan Pesan">
+        </div>
+
+
+        <!-- Card 6 -->
+        <div class="card">
             <h1>Menghitung Luas Persegi Panjang</h1>
             <br>
             <input type="number" v-model="width" placeholder="Masukkan lebar">
@@ -116,13 +126,54 @@ HASIL LATIHAN TERBARU
             <!-- Memanggil fungsi untuk mengetahui luas persegi panjang -->
             <p>Luas Persegi Panjang: {{ luasPersegiPanjang }}</p>
         </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+            <h1>Memasukan data baru ke array</h1>
+            <!-- Memanggil dataObject array dengan perintah derective v-model="namaObjcet"-->
+            <p>{{ kelas }}</p>
+            <div>
+                <!-- Memasukan value atau data baru ke dalam array secara realtime -->
+                <label for=""><input type="checkbox" v-model="kelas" value="PHP">PHP</label>
+                <label for=""><input type="checkbox" v-model="kelas" value="Python">Python</label>
+                <label for=""><input type="checkbox" v-model="kelas" value="Java">Java</label>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="card">
+            <h1>Membuat perulangan (1-5)</h1>
+            <div>
+                <!-- Memanggil fungsi v-for="item adalah inisial data, in atau of adalah inisial atau pembatas, 5 adalah berapa kali di ulanginya " -->
+                <span v-for="x in 5"> Perulangan ke-{{ x }}</span>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+            <h1>Memanggil index perulangan (1-3)</h1>
+            <div>
+                <!-- Memanggil fungsi v-for="(x adalah inisial data, i adalah inisial index data), in atau of adalah inisial atau pembatas, 3 adalah berapa kali di ulanginya " -->
+                <p v-for="(x, i) in 3"> Index ke-{{ i }} Perulangan ke-{{ x }}</p>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+            <h1>Memanggil data array dengan perulangan</h1>
+            <!-- Memanggil dataObject array dengan perintah derective v-for agar di panggil berulang kali sesuai banyaknya data di array -->
+            <ul>
+                <!-- Memanggil fungsi v-for="item adalah inisial data, in atau of adalah inisial atau pembatas, kelas adalah nama variable array di model " -->
+                <li v-for="item in kelas">{{ item }}</li>
+            </ul>
+        </div>
     </div>
 </body>
 <script>
     const judul = new Vue({
         el: 'title',
         data: {
-            judul: "Latihan 3"
+            judul: "Latihan 4"
         }
     });
     const header = new Vue({
@@ -147,7 +198,13 @@ HASIL LATIHAN TERBARU
         menu: 'home',
         num: 0,
         width: 0,
-        height: 0
+        height: 0,
+        // Membuat variable kelas dengan tipe data array
+        kelas: [
+            'HTML',
+            'CSS',
+            'JS'
+        ]
     }
 
     // KODE INSTANCE VUE
