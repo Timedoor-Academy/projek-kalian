@@ -3,153 +3,180 @@
 
 <head>
     <title>Formulir Nilai Siswa</title>
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<!--     <link rel="stylesheet" type="text/css" href="form.css"> -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .container {
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    transition: all 0.3s ease;
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-        label {
-            font-weight: bold;
-        }
+label {
+    font-weight: bold;
+}
 
-        input[type="password"],
-        input[type="text"],
-        input[type="number"],
-        select {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border-color 0.2s ease;
-        }
+input[type="password"],
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s ease;
+}
 
-        input[type="password"]:focus,
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        select:focus {
-            border-color: #007bff;
-        }
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+}
 
-        button {
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
+button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+button:hover {
+    background-color: #0056b3;
+}
 
-        .container:hover {
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
+button[type="button"] {
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    color: #007bff;
+    border: 1px solid #007bff;
+    transition: all 0.2s ease;
+}
 
-        /* Responsive styles */
-        @media screen and (max-width: 768px) {
-            .container {
-                width: 80%;
-            }
-        }
+button[type="button"]:hover {
+    background-color: #007bff;
+    color: #fff;
+}
 
-        @media screen and (max-width: 576px) {
-            .container {
-                width: 90%;
-            }
-        }
+#profile img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnProfile {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+}
+
     </style>
+    
 </head>
 
 <body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
 
-    <body>
-        <div class="container" id="loginContainer">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
-                <button type="submit">Login</button>
-            </form>
-        </div>
+    <div class="container" id="inputContainer" style="display: none;">
+        <h2>Form Input Nilai Siswa</h2>
+        <form id="inputForm">
+            <label for="nama">Nama Siswa:</label>
+            <input type="text" id="nama" required>
 
-        <div class="container" id="inputContainer" style="display: none;">
-            <h2>Form Input Nilai Siswa</h2>
-            <form id="inputForm">
-                <label for="nama">Nama Siswa:</label>
-                <input type="text" id="nama" required>
+            <label for="kelas">Kelas:</label>
+            <select id="kelas" required>
+                <option value="">Pilih Kelas</option>
+                <option value="X">Kelas X</option>
+                <option value="XI">Kelas XI</option>
+                <option value="XII">Kelas XII</option>
+            </select>
 
-                <label for="kelas">Kelas:</label>
-                <select id="kelas" required>
-                    <option value="">Pilih Kelas</option>
-                    <option value="X">Kelas X</option>
-                    <option value="XI">Kelas XI</option>
-                    <option value="XII">Kelas XII</option>
-                </select>
+            <label for="tugas">Nilai Tugas:</label>
+            <input type="number" id="tugas" min="0" max="100" required>
 
-                <label for="tugas">Nilai Tugas:</label>
-                <input type="number" id="tugas" min="0" max="100" required>
+            <label for="uts">Nilai UTS:</label>
+            <input type="number" id="uts" min="0" max="100" required>
 
-                <label for="uts">Nilai UTS:</label>
-                <input type="number" id="uts" min="0" max="100" required>
+            <label for="uas">Nilai UAS:</label>
+            <input type="number" id="uas" min="0" max="100" required>
 
-                <label for="uas">Nilai UAS:</label>
-                <input type="number" id="uas" min="0" max="100" required>
+            <label for="kehadiran">Jumlah Kehadiran:</label>
+            <input type="number" id="kehadiran" min="0" max="16" required>
 
-                <label for="kehadiran">Jumlah Kehadiran:</label>
-                <input type="number" id="kehadiran" min="0" max="16" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-
-        <div class="container" id="outputContainer" style="display: none;">
+    <!-- <div class="container" id="outputContainer" style="display: none;">
             <h2>Hasil Nilai Siswa</h2>
             <form id="outputForm">
                 <label for="outputNama">Nama Siswa:</label>
@@ -178,43 +205,74 @@
 
                 <button type="button" onclick="resetForm()">Reset</button>
             </form>
+        </div> -->
+
+    <div class="container" id="outputContainer" style="display: none;">
+        <h2>Profile</h2>
+        <div id="profile">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+                alt="Profile Picture" class="rounded">
+            <p><strong>Status/Role:</strong> <span id="outputRole"></span></p>
+            <p><strong>Nama Siswa:</strong> <span id="outputNama"></span></p>
+            <p><strong>Kelas:</strong> <span id="outputKelas"></span></p>
+            <p><strong>Nilai Akhir:</strong> <span id="outputNilaiAkhir"></span></p>
+            <p><strong>Persentase Nilai:</strong> <span id="outputPersentaseNilai"></span>%</p>
         </div>
+        <div class="btnProfile">
+            <button type="button" onclick="backToLogin()">Back to Login</button>
+            <button type="button" id="resetButton" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+</body>
 
-        <!-- <script src="script.js"></script> -->
-        <script>
-            // Array of users (username and password) - For simplicity, use plain text password (not recommended in production)
-            const users = [{
-                username: 'admin',
-                password: 'admin',
-                role: 'admin'
-            }];
+<!-- <script type="text/javascript" src="form.js"></script> -->
+<script>
+    // Array of users (username and password) - For simplicity, use plain text password (not recommended in production)
+const users = [
+    { username: 'admin', password: 'admin', role: 'admin' },
+    { username: 'teacher1', password: 'teacher1', role: 'teacher' },
+    { username: 'student1', password: 'student1', role: 'student' }
+];
 
-            document.getElementById('loginForm').addEventListener('submit', function (e) {
-                e.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-                // Get input values
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
+    // Get input values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-                // Check user credentials
-                const user = users.find(user => user.username === username && user.password === password);
+    // Check user credentials
+    const user = users.find(user => user.username === username && user.password === password);
 
-                if (user) {
-                    // Login success
-                    if (user.role === 'admin') {
-                        // Hide login form and display input form for admin
-                        document.getElementById('loginContainer').style.display = 'none';
-                        document.getElementById('inputContainer').style.display = 'block';
-                    } else {
-                        alert('You do not have access to the input form.');
-                    }
-                } else {
-                    alert('Invalid username or password.');
-                }
-            });
+    if (user) {
+        // Login success
+        if (user.role === 'admin') {
+            // Only admins can access the input form
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('inputContainer').style.display = 'block';
+            document.getElementById('outputRole').textContent = 'Admin';
+            alert('Welcome, Admin! You can now input student grades.');
+        } else if (user.role === 'teacher') {
+            // Only teachers can access the input form
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('inputContainer').style.display = 'block';
+            document.getElementById('outputRole').textContent = 'Teacher';
+            alert('Welcome, Teacher! You can now input student grades.');
+        } else if (user.role === 'student') {
+            // Students can only view the results, hide the input form and remove Reset button
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('outputContainer').style.display = 'block';
+            document.getElementById('resetButton').style.display = 'none'; // Hide the Reset button
+            document.getElementById('outputRole').textContent = 'Student';
+            alert('Welcome, Student! You can now view your profile and grades.');
+        }
+    } else {
+        alert('Invalid username or password.');
+    }
+});
             document.getElementById('inputForm').addEventListener('submit', function (e) {
                 e.preventDefault();
-
+        
                 // Get input values
                 var nama = document.getElementById('nama').value;
                 var kelas = document.getElementById('kelas').value;
@@ -222,32 +280,26 @@
                 var uts = parseInt(document.getElementById('uts').value);
                 var uas = parseInt(document.getElementById('uas').value);
                 var kehadiran = parseInt(document.getElementById('kehadiran').value);
-
+        
                 // Calculate nilai akhir
                 var nilaiAkhir = (tugas + uts + uas) / 3;
-
-                // Calculate persentase kehadiran
-                var totalKehadiran = 16; // Jumlah pertemuan dalam satu semester
-                var persentaseKehadiran = (kehadiran / totalKehadiran) * 100;
-
+        
+                // Calculate persentase nilai
+                var totalMaxScore = 300; // The total maximum score from all assignments and exams (e.g., 100 + 100 + 100)
+                var persentaseNilai = (nilaiAkhir / totalMaxScore) * 100;
+        
                 // Display the output container and hide the input container
                 document.getElementById('outputContainer').style.display = 'block';
                 document.getElementById('inputContainer').style.display = 'none';
-
-                // Display input values on output form
-                document.getElementById('outputNama').value = nama;
-                document.getElementById('outputKelas').value = kelas;
-                document.getElementById('outputTugas').value = tugas;
-                document.getElementById('outputUTS').value = uts;
-                document.getElementById('outputUAS').value = uas;
-                document.getElementById('outputKehadiran').value = kehadiran;
-                document.getElementById('outputNilaiAkhir').value = nilaiAkhir.toFixed(2);
-                document.getElementById('outputPersentaseKehadiran').value = persentaseKehadiran.toFixed(2) +
-                    '%';
-
-                // Optional: Display nilai akhir, nilai rata-rata, dan persentase kehadiran
-                alert('Nilai Akhir: ' + nilaiAkhir.toFixed(2) + '\nPersentase Kehadiran: ' + persentaseKehadiran
-                    .toFixed(2) + '%');
+        
+                // Update profile details with input values
+                document.getElementById('outputNama').textContent = nama;
+                document.getElementById('outputKelas').textContent = kelas;
+                document.getElementById('outputNilaiAkhir').textContent = nilaiAkhir.toFixed(2);
+                document.getElementById('outputPersentaseNilai').textContent = persentaseNilai.toFixed(2);
+        
+                // Optional: Display nilai akhir and persentase nilai
+                alert('Nilai Akhir: ' + nilaiAkhir.toFixed(2) + '\nPersentase Nilai: ' + persentaseNilai.toFixed(2) + '%');
             });
 
             function resetForm() {
@@ -258,7 +310,10 @@
                 document.getElementById('outputContainer').style.display = 'none';
                 document.getElementById('inputContainer').style.display = 'block';
             }
-        </script>
-    </body>
-
+            function backToLogin() {
+                // Hide output container and display login container
+                document.getElementById('outputContainer').style.display = 'none';
+                document.getElementById('loginContainer').style.display = 'block';
+            }
+</script>
 </html>
