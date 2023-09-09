@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link rel="stylesheet" href="formulir-kerja.css">
+    <style>
+        #awal {
+            background-image: radial-gradient(circle at 12.5% 12.5%, #d18eff 0, #9174ff 25%, #4f57eb 50%, #003bb5 75%, #002384 100%);
+            height: 500px;
+        }
+
+        h1 {
+            color: white;
+            font-family: Times;
+            margin-left: 20px;
+        }
+
+        p {
+            color: white;
+            font-family: Times;
+            margin-left: 20px;
+        }
+
+        #gambarKerja {
+            /* margin-left: 1000px;
+    display: block;
+    width: 400px;
+    margin-top: 50px; */
+            margin-left: 1050px;
+            width: 350px;
+
+        }
+
+        #aturPilihan {
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            border-width: 5px;
+            margin-left: 20px;
+            margin-right: 1117px;
+        }
+
+        #nama {
+            margin: 5px;
+        }
+
+        #aturJob {
+            margin-left: 50px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 5px green, 0 0 25px green;
+        }
+
+        #popular {
+            font-family: Times;
+            margin-left: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="awal">
+            <div>
+                <h1>There Are 93,178 Postings Here</h1>
+                <h1>For You!</h1>
+                <p>Find jobs,Employment & Career Opportunites </p>
+                <br>
+                <div id="aturPilihan" style="background-color: gold;">
+                    <form id="inputForm">
+
+                        <input type="text" id="nama" placeholder="Job title,keywords...">
+                        <select id="kota" required>
+                            <option value="">Choose City</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Palembang">Palembang</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Malang">Malang</option>
+                        </select>
+                        <button type="submit">Find Job</button>
+                </div>
+
+                <h5 id="popular">Popular Searches : Designer,Developer,Web,IOS,PHP,Senior,Engineer</h5>
+
+                <img id="gambarKerja" src="meja-kerja-png-45-removebg-preview.png" alt="Meja Dan Laptop">
+            </div>
+
+        </div>
+    </header>
+</body>
+
+</html>
