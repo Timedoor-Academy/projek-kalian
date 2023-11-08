@@ -271,11 +271,11 @@
 
 // penggunaan while untuk mengecek input pengguna
 
-let userInput = '';
-while (userInput !== 'exit') {
-  userInput = prompt('Masukkan input (ketik "exit" untuk keluar):');
-  console.log(`Input pengguna: ${userInput}`);
-}
+// let userInput = '';
+// while (userInput !== 'exit') {
+//   userInput = prompt('Masukkan input (ketik "exit" untuk keluar):');
+//   console.log(`Input pengguna: ${userInput}`);
+// }
 
 // Contoh penggunaan tipe data string
 
@@ -334,3 +334,10 @@ while (userInput !== 'exit') {
 // let namaHari = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
 
 // console.log('Hari ini adalah ' + namaHari[3]); // Output: Hari ini adalah Kamis
+
+var num = parseInt(prompt("Masukan angka"));
+var result = document.getElementById("output");
+
+for (x = 1; x <= num; x++) {
+  result.innerHTML = "Ini adalah angka " + x;
+}
