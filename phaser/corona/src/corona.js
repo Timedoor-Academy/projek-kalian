@@ -1,6 +1,8 @@
 import Phaser from 'phaser'
 
 import CoronaBoosterScene from './scenes/CoronaBoosterScene'
+import GameOverScene from "./scenes/GameOverScene";
+import StartScene from './scenes/StartScene';
 
 const config = {
 	type: Phaser.AUTO,
@@ -12,7 +14,7 @@ const config = {
 			gravity: { y: 0 }
 		}
 	},
-	scene: [CoronaBoosterScene],
+	scene: [StartScene,CoronaBoosterScene, GameOverScene],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
