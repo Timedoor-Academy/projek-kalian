@@ -105,6 +105,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
         this.scoreLabel = this.add
             .text(10, 10, "Score", {
                 fontSize: "16px",
+                // @ts-ignore
                 fill: "black",
                 backgroundColor: "white",
             })
@@ -113,6 +114,7 @@ export default class CoronaBusterScene extends Phaser.Scene {
         this.lifeLabel = this.add
             .text(10, 30, "Life: " + this.life, {
                 fontSize: "16px",
+                // @ts-ignore
                 fill: "black",
                 backgroundColor: "white",
             })
@@ -161,14 +163,21 @@ export default class CoronaBusterScene extends Phaser.Scene {
     }
 
     update(time) {
+        // @ts-ignore
         this.clouds.children.iterate((child) => {
+            // @ts-ignore
             child.setVelocityY(20); //----------------> Semua awan bergerak kebawah dengan kecepatan 20.
         });
 
+        // @ts-ignore
         this.clouds.children.iterate((child) => { //-----------> untuk setiap awan dalam kumpulan awan
+            // @ts-ignore
             child.setVelocityY(20); //----------> bergerak kebawah
+            // @ts-ignore
             if (child.y > this.scale.height) { //---------->  jika melewati batas bawah
+                // @ts-ignore
                 child.x = Phaser.Math.Between(10, 400); //----------> posisi awan dipindah ke atas layout
+                // @ts-ignore
                 child.y = 0;
             }
         });
