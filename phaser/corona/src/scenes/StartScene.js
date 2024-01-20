@@ -6,9 +6,9 @@ export default class StartScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("background", "images/corona/bg_layer1.png");
-        this.load.image("start", "images/corona/start.png");
-        this.load.image("play-button", "images/corona/right-btn.png");
+        this.load.image("background", "images/sky_blue.png");
+        this.load.image("start", "images/start.png");
+        this.load.image("play-button", "images/right-btn.png");
 
         this.load.audio("mulai", "sfx/sfx_laser.ogg");
     }

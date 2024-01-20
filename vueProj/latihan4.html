@@ -78,6 +78,7 @@ LATIHAN 4 FOR LOOP WITH DIRECTIVE/KEKUATAN SUPER VUE JS
 
             <!-- Memanggil fungsi untuk mengetahui muda atau tidak dengan logika kurang dari 22 adalah muda -->
             <!-- <p>Usia {{infoAge}} itu masih {{ infoLook }}</p> -->
+            <p>Qty {{ qty - cart }}</p>
 
             <!-- Memanggil derective v-text="namaObject" untuk memunculkan value text -->
             <!-- <p v-text="fullName"></p> -->
@@ -88,12 +89,12 @@ LATIHAN 4 FOR LOOP WITH DIRECTIVE/KEKUATAN SUPER VUE JS
             <!-- <p v-html="viewUs"></p> -->
 
             <!-- Memanggil derective v-on:click="namaObject" atau dengan @click untuk memanggil fungsi klik-->
-            <!-- <button @click="editAge">Ubah Usia</button> -->
+            <button @click="editAge">Ubah Usia</button>
 
             <!-- Membuat class data binding -->
-            <button :class="{active: menu === 'home'}" @click="menu = 'home' ">Home</button>
+            <!-- <button :class="{active: menu === 'home'}" @click="menu = 'home' ">Home</button>
             <button :class="{active: menu === 'about'}" @click="menu = 'about'">About</button>
-            <button :class="{active: menu === 'blog'}" @click="menu = 'blog'">Blog</button>
+            <button :class="{active: menu === 'blog'}" @click="menu = 'blog'">Blog</button> -->
         </div>
 
         <!-- Card 4 -->
@@ -114,6 +115,7 @@ LATIHAN 4 FOR LOOP WITH DIRECTIVE/KEKUATAN SUPER VUE JS
             <!-- Memanggil dataObject dengan derective v-model="namaData" -->
             <input type="text" v-model="name" placeholder="Masukkan Nama">
             <input type="text" v-model="message" placeholder="Masukkan Pesan">
+            <input type="number" v-model="cart">
         </div>
 
 
@@ -199,6 +201,8 @@ LATIHAN 4 FOR LOOP WITH DIRECTIVE/KEKUATAN SUPER VUE JS
         num: 0,
         width: 0,
         height: 0,
+        qty: 10,
+        cart: 0,
         // Membuat variable kelas dengan tipe data array
         kelas: [
             'HTML',
@@ -246,6 +250,10 @@ LATIHAN 4 FOR LOOP WITH DIRECTIVE/KEKUATAN SUPER VUE JS
             // Membuat fungsi untuk menambahkan variable num ketika button di klik
             plusBtn() {
                 this.num++;
+            },
+
+            prodBtn() {
+                this.cart++
             }
         },
         // Properti computed untuk menambahkan sebuah fungsi seperti di js biasa dengan cache yang hanya terdeteksi satu kali walaupun perintah nya di panggil beberapa kali
